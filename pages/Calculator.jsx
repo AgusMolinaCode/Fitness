@@ -4,12 +4,12 @@ import Head from 'next/head';
 import Form from '@/components/IdealWeight';
 
 function fetchData(age, weight, height) {
-    const url = `https://${API_HOST}/bmi?age=${age}&weight=${weight}&height=${height}`;
+    const url = `https://fitness-calculator.p.rapidapi.com/bmi?age=${age}&weight=${weight}&height=${height}`;
     const options = {
         method: 'GET',
         headers: {
             'content-type': 'application/octet-stream',
-            'X-RapidAPI-Key': process.env.API_KEY,
+            'X-RapidAPI-Key': process.env.NEXT_PUBLIC_API_KEY,
             'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
         }
     };
