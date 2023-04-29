@@ -8,6 +8,8 @@
         const [exercises, setExercises] = useState([]);
         const limitedExercises = exercises.slice(0, 8);
 
+        
+
         useEffect(() => {
             async function fetchData() {
                 const url = `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${encodeURIComponent(bodyPart)}`;
