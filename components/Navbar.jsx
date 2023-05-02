@@ -1,13 +1,23 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { motion } from "framer-motion"
+import { navVariants } from '@/utils/motion';
+
+
 
 const Navbar = () => {
 
     const router = useRouter();
 
     return (
-        <div>
+        <motion.div
+            variants={navVariants}
+            initial="hidden"
+            whileInView="show"
+        >
             <div className='flex px-5 md:px-[45px] justify-between gap-1 pt-[44px]'>
 
                 <div className="navbar-start md:hidden">
@@ -45,7 +55,7 @@ const Navbar = () => {
 
 
             </div>
-        </div>
+        </motion.div>
     );
 }
 
