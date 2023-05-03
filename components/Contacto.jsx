@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 import { TextField, Button } from "@mui/material";
 import Image from 'next/image';
 import { FaFacebook, FaInstagram, FaTwitterSquare } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { slideIn, staggerContainer } from '@/utils/motion'
 
 
 
@@ -9,10 +13,20 @@ const Contacto = () => {
     return (
         <div id='contact' className='px-[8px] lg:px-[120px] pt-16 pb-10'>
             <div>
-                <div className='w-full flex flex-col justify-center p-2 mx-auto md:justify-start md:w-[800px]'>
-                    <h1 className='text-4xl text-white text-center font-principal'><span className='color'>JOIN NOW </span>TO GET IN SHAPE</h1>
-                    <p className='text-lg text-white text-center md:text-left font-principal pt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa omnis incidunt eius recusandae quaerat error accusamus fuga veniam itaque, excepturi cumque possimus similique perspiciatis dolorem perferendis, consectetur minus animi odit?</p>
-                </div>
+                <motion.div 
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.13 }}
+                    className='w-full flex flex-col justify-center p-2 mx-auto md:justify-start md:w-[800px]'>
+                    
+                    <motion.h1 
+                        variants={slideIn('left', 'spring', 0, 3.1)}
+                        className='text-4xl text-white text-center font-principal'><span className='color'>JOIN NOW </span>TO GET IN SHAPE</motion.h1>
+                    <motion.p 
+                        variants={slideIn('left', 'spring', 0, 2.1)}
+                        className='text-lg text-white text-center md:text-left font-principal pt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa omnis incidunt eius recusandae quaerat error accusamus fuga veniam itaque, excepturi cumque possimus similique perspiciatis dolorem perferendis, consectetur minus animi odit?</motion.p>
+                </motion.div>
 
                 <div className='flex flex-wrap gap-4 justify-evenly'>
 

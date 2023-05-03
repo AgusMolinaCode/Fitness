@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { FaPlus } from 'react-icons/fa';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { fadeIn, slideIn, staggerContainer } from '@/utils/motion'
+import { slideIn, staggerContainer } from '@/utils/motion'
 
 const Hero = () => {
     return (
@@ -14,7 +14,7 @@ const Hero = () => {
                 <FaPlus size={25} className='hidden 2xl:block absolute right-[150px] top-[400px] hover:rotate-45 duration-500 rotate-6' color='white' />
                 <FaPlus size={25} className='hidden 2xl:block absolute left-[150px] top-[580px] hover:rotate-180 duration-700 rotate-[35deg]' color='white' />
 
-                <div className='flex flex-wrap gap-10 lg:gap-0 justify-around'>
+                <div className='flex flex-wrap gap-8 lg:gap-0 justify-center'>
 
                     <div>
 
@@ -23,7 +23,8 @@ const Hero = () => {
                             initial="hidden"
                             whileInView="show"
                             viewport={{ once: false, amount: 0.02 }}
-                        >
+                            className='m-3'>
+                        
                             <motion.h1 
                             variants={slideIn('left', 'spring', 0, 3.1)}
                             className='text-[210px] lg:text-[260px] hidden lg:block  font-principal  bg-gradient-to-b from-purple-900 to-indigo-800 bg-clip-text text-transparent'>EVOLVE</motion.h1>
@@ -34,7 +35,7 @@ const Hero = () => {
 
                             <motion.h2 
                             variants={slideIn('left', 'spring',0, 3.9)}
-                            className='text-[35px] md:text-[45px] text-center font-principal tracking-wider text-white'>evolutionary fitness</motion.h2>
+                            className='text-[35px]  md:text-[45px] text-center font-principal tracking-wider text-white'>evolutionary fitness</motion.h2>
                             
                         </motion.div>
 
@@ -62,6 +63,7 @@ const Hero = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: false, amount: 0.05 }}
+                        className='m-3'
                     >
                         <motion.img 
                         initial={{ x: 0 }}
